@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33403.182
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sales.Shared", "Sales.Shared\Sales.Shared.csproj", "{BE4AB4F0-D8BA-4386-809E-7B9A2EB93739}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sales.Shared", "Sales.Shared\Sales.Shared.csproj", "{BE4AB4F0-D8BA-4386-809E-7B9A2EB93739}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sales.API", "Sales.API\Sales.API.csproj", "{80F4D43F-5702-492E-B944-ED9EEAFD86B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sales.API", "Sales.API\Sales.API.csproj", "{80F4D43F-5702-492E-B944-ED9EEAFD86B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sales.WEB", "Sales.WEB\Sales.WEB.csproj", "{CF9AD962-67E5-4777-ACC5-4A1D677CAACB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sales.WEB", "Sales.WEB\Sales.WEB.csproj", "{CF9AD962-67E5-4777-ACC5-4A1D677CAACB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sales.Mobile", "Sales.Mobile\Sales.Mobile.csproj", "{BFF534BC-B00E-4078-A3D2-F47A3B43ECBE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sales.Mobile", "Sales.Mobile\Sales.Mobile.csproj", "{BFF534BC-B00E-4078-A3D2-F47A3B43ECBE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,15 +1,33 @@
 using Microsoft.EntityFrameworkCore;
 using Sales.API.Data;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
 
 builder.Services.AddControllers();
+
+builder.Services.AddControllers()
+    .AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<Datacontext>(x => x.UseSqlServer("name=DockerConnection"));
+builder.Services.AddDbContext<DataContext>(c => c.UseSqlServer("name=ConecctionBD"));
+builder.Services.AddTransient<SeedDb>();
 
 var app = builder.Build();
+
+SeedData(app);
+void SeedData(WebApplication app)
+{
+    IServiceScopeFactory? scopedFactory = app.Services.GetService<IServiceScopeFactory>();
+
+    using (IServiceScope? scope = scopedFactory!.CreateScope())
+    {
+        SeedDb? service = scope.ServiceProvider.GetService<SeedDb>();
+        service!.SeedAsync().Wait();
+    }
+}
 
 if (app.Environment.IsDevelopment())
 {
@@ -20,6 +38,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
 app.MapControllers();
 
 app.UseCors(x => x
@@ -27,6 +46,9 @@ app.UseCors(x => x
     .AllowAnyHeader()
     .SetIsOriginAllowed(origin => true)
     .AllowCredentials());
+
+
+
 
 
 app.Run();
